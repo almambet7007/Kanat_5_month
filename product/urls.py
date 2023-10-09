@@ -10,3 +10,4 @@ urlpatterns = [
     path('reviews/<int:id>', views.review_detail_api_view),
     path('products/reviews/', views.product_review_api_view)
 ]
+
