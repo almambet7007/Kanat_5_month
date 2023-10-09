@@ -55,3 +55,10 @@ def review_detail_api_view(request, id):
         return Response(status=status.HTTP_404_NOT_FOUND)
     serializer = ReviewSerializer(review).data
     return Response(data=serializer, status=status.HTTP_200_OK)
+
+
+def product_review_api_view(request):
+    if request.method == 'GET':
+        product = Product.objects.all()
+        serializer = ProductReviewSerializer(product, many=True).data
+        return Response(serializer, status=status.HTTP_200_OK)
